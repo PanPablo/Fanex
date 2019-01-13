@@ -56,4 +56,4 @@ deploy_staging:
     name: staging
     url: http://fnx.warp10.pl
   only:
-    - develop
+    - master
