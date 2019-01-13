@@ -54,6 +54,6 @@ deploy_staging:
 
   environment:
     name: staging
-    url: https://staging.example.com
+    url: http://fnx.warp10.pl
   only:
     - develop
