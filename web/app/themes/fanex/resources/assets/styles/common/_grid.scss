@@ -1,0 +1,77 @@
+/**
+* col-1 - kolumna – | 0 0 0 0 0 0 0 0 0 0 0 0
+* col-4-6 – sześć kolumn zaczynających się od 4 – 0 0 0 | | | | | | 000
+ */
+
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 100%;
+  width: 1170px;
+  grid-column-gap: 30px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@for $i from 1 to 13 {
+  .col-#{$i} {
+    grid-column-end: span $i;
+  }
+
+  .col-md-#{$i} {
+    @media (max-width: 1200px) {
+      grid-column-end: span $i;
+    }
+  }
+
+  .col-sm-#{$i} {
+    @media (max-width: 520px) {
+      grid-column-end: span $i;
+    }
+  }
+
+  @for $j from 1 to 13 {
+    .col-#{$j}-#{$i} {
+      grid-column: $j / span $i;
+    }
+
+    .col-md-#{$j}-#{$i} {
+      @media (max-width: 1200px) {
+        grid-column: $j / span $i;
+      }
+    }
+
+    .col-sm-#{$i} {
+      @media (max-width: 520px) {
+        grid-column: $j / span $i;
+      }
+    }
+  }
+}
+
+.col-hidden {
+  display: none;
+}
+
+.col-sm-hidden {
+  @media (max-width: 520px) {
+    display: none;
+  }
+}
+
+.col-md-hidden {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.col-sm-hidden {
+  @media (max-width: 520px) {
+    display: none;
+  }
+}
+
+
